@@ -32,3 +32,17 @@ int main() {
 	}
 	return 0;
 }
+
+
+    while(scanf("%[^,]s",str[i++]) != EOF){
+        printf("%s,",str[i-1]);
+       if(getchar() == '\n'){
+           qsort(str,i,sizeof(str[0]),strcmp);
+           for( j = 0; j < i-1; j++){
+               printf("%s,",str[j]);
+           }
+           printf("%s",str[j]);
+           printf("\n");
+           i = 0;
+       }
+    }

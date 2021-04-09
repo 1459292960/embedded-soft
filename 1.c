@@ -17,16 +17,16 @@ typedef struct{
 
 int main(void){
     int i,j;
-    int num_delimer = 0;
-    int num[26] = {0};
+    int num_delimiter = 0;
+    int num[26] = {0}; // 用于记录a～z队伍的比分
     int team_attend[26] = {0}; // 记录参加了比赛的队伍
     
-    char  str[20],str1[20];
+    char  str[20] = {0},str1[20] = {0};
     while(scanf("%s",str) != EOF){
-        scanf("%s",str1);
-        if(str1[0]>str1[2]){
-            num[str[0]-'a']+=3; // 赢的队得3分
-            num[str[2]-'a']+=0;  // 输的队不得分
+        scanf("%s",str1); // str1用于存储比分
+        if(str1[0] > str1[2]){
+            num[str[0]-'a'] += 3; // 赢的队得3分
+            num[str[2]-'a'] += 0;  // 输的队不得分
         }
         else if(str1[0] == str1[2]){
             num[str[0]-'a']+=1;  // 平局，双方各得一分
@@ -43,7 +43,7 @@ int main(void){
     // 统计有多少只队伍参加了比赛
     for(i = 0;i < 26;i++){
         if(team_attend[i] != 0){
-        num_delimer++;     
+        num_delimiter++;     
         }
     }
 
@@ -75,21 +75,22 @@ int main(void){
 
         printf("%c %d",qiudui[i].name,qiudui[i].score);
         team_attend[i]  = 0; // 输出后将该队参加比赛的标志清零
-         if(num_delimer>1) 
+         if(num_delimiter>1) 
             printf(",");
-        num_delimer--;                  
+        num_delimiter--;                  
 
         }
     }
     // 输出参加了比赛，但是分数为0的队伍
-    int res = num_delimer; // 剩下分数为0的队伍数目
-    for(i = 0;i < res; i++){
+    int res = num_delimiter; // 剩下分数为0的队伍数目
+    for(i = 0; i < res; i++){
         for(int j= 0; j < 26 ; j++){
                     if(team_attend[j] && num[j] == 0){
                         printf("%c %d",j+'a',0);
-                        if(num_delimer>1) 
+                        if(num_delimiter > 1) 
                              printf(",");
-                         num_delimer--;    
+                         num_delimiter--;
+                         break;    // 输出了就可以不再进行没有作用的循环
                     }
         }
     }
