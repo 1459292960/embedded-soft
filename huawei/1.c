@@ -1,4 +1,5 @@
 /* @date: 2021-04-01 09:57:26
+    华为实习生笔试第一题，自己的思路与写法
 @功能:
     统计球队比赛得分，并按分数从高到低排序；分数相同的，按字母顺序排序。分数为0的、参加了的
     队伍也要输出
@@ -17,18 +18,6 @@ typedef struct{
 
 int main(void){
     int i,j;
-<<<<<<< HEAD
-    int num_delimer = 0;
-    int num[26] = {0};
-    int team_attend[26] = {0}; // 记录参加了比赛的队伍
-    
-    char  str[20],str1[20];
-    while(scanf("%s",str) != EOF){
-        scanf("%s",str1);
-        if(str1[0]>str1[2]){
-            num[str[0]-'a']+=3; // 赢的队得3分
-            num[str[2]-'a']+=0;  // 输的队不得分
-=======
     int num_delimiter = 0;
     int num[26] = {0}; // 用于记录a～z队伍的比分
     int team_attend[26] = {0}; // 记录参加了比赛的队伍
@@ -39,7 +28,6 @@ int main(void){
         if(str1[0] > str1[2]){
             num[str[0]-'a'] += 3; // 赢的队得3分
             num[str[2]-'a'] += 0;  // 输的队不得分
->>>>>>> 41f62c5eba0106f4cb5112aecbf912682ae8e593
         }
         else if(str1[0] == str1[2]){
             num[str[0]-'a']+=1;  // 平局，双方各得一分
@@ -56,11 +44,7 @@ int main(void){
     // 统计有多少只队伍参加了比赛
     for(i = 0;i < 26;i++){
         if(team_attend[i] != 0){
-<<<<<<< HEAD
-        num_delimer++;     
-=======
         num_delimiter++;     
->>>>>>> 41f62c5eba0106f4cb5112aecbf912682ae8e593
         }
     }
 
@@ -92,29 +76,13 @@ int main(void){
 
         printf("%c %d",qiudui[i].name,qiudui[i].score);
         team_attend[i]  = 0; // 输出后将该队参加比赛的标志清零
-<<<<<<< HEAD
-         if(num_delimer>1) 
-            printf(",");
-        num_delimer--;                  
-=======
          if(num_delimiter>1) 
             printf(",");
         num_delimiter--;                  
->>>>>>> 41f62c5eba0106f4cb5112aecbf912682ae8e593
 
         }
     }
     // 输出参加了比赛，但是分数为0的队伍
-<<<<<<< HEAD
-    int res = num_delimer; // 剩下分数为0的队伍数目
-    for(i = 0;i < res; i++){
-        for(int j= 0; j < 26 ; j++){
-                    if(team_attend[j] && num[j] == 0){
-                        printf("%c %d",j+'a',0);
-                        if(num_delimer>1) 
-                             printf(",");
-                         num_delimer--;    
-=======
     int res = num_delimiter; // 剩下分数为0的队伍数目
     for(i = 0; i < res; i++){
         for(int j= 0; j < 26 ; j++){
@@ -124,7 +92,6 @@ int main(void){
                              printf(",");
                          num_delimiter--;
                          break;    // 输出了就可以不再进行没有作用的循环
->>>>>>> 41f62c5eba0106f4cb5112aecbf912682ae8e593
                     }
         }
     }

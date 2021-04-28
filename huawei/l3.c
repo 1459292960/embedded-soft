@@ -1,3 +1,12 @@
+/*@date:2021-04-28
+    李圣华为实习生笔试第一题
+@功能:
+    
+@目的:
+    
+*/
+
+
 #include <stdio.h>
 // 字符串反转
 char * revstr(char *str, size_t len)
