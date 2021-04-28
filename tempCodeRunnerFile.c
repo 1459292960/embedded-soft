@@ -1,2 +1,2 @@
 
-    int num[26];
+int main(void){
