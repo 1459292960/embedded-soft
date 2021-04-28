@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include<string.h>
+<<<<<<< HEAD
 // 宏定义函数，用异或实现两个数互换值，宏定义相当于在文中使用的位置将swap替换成{}中的代码，所以不用传递地址
 //  \ 每行后面不能呢个加空格或者注释，否则都会报错
+=======
+// 宏定义函数，用 异或 实现两个数互换值，宏定义相当于在文中使用的位置将swap替换成{}中的代码，所以不用传递地址
+// 宏定义的 \ 每行后面不能加空格或者注释，否则都会报错
+>>>>>>> 41f62c5eba0106f4cb5112aecbf912682ae8e593
 #define swap(a,b){\
     a ^= b;\
     b ^= a;\
@@ -27,7 +32,11 @@ int main(void){
         当读到文件末尾时，返回-1，补码为1111 1111，那么逐位（～）取反为0000 0000
     */
     while(~scanf("%[^\n]s",s)){
+<<<<<<< HEAD
         char team1,team2;
+=======
+        char team1,team2; // 存储两个队伍名称
+>>>>>>> 41f62c5eba0106f4cb5112aecbf912682ae8e593
         int score1,score2;
         // printf("%s",s);
    
@@ -35,9 +44,15 @@ int main(void){
         team1 = *(p-1); // 队伍名
         team2 = *(p+1);
         p  = strstr(s,":");
+<<<<<<< HEAD
         score1 = *(p-1) - '0'; // 分数
         score2 = *(p+1) - '0';
         if(score1 >score2){
+=======
+        score1 = *(p-1) - '0'; // 分数，转化为实际的数字相比
+        score2 = *(p+1) - '0';
+        if(score1 > score2){
+>>>>>>> 41f62c5eba0106f4cb5112aecbf912682ae8e593
             team[team1-'a']+=3;
             team[team2-'a']+=0;
         }
@@ -102,4 +117,8 @@ int main(void){
     }
 
     return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 41f62c5eba0106f4cb5112aecbf912682ae8e593
