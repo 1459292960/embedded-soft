@@ -11,11 +11,11 @@
 #include<string.h>
 // 宏定义函数，用 异或 实现两个数互换值，宏定义相当于在文中使用的位置将swap替换成{}中的代码，所以不用传递地址
 // 宏定义的 \ 每行后面不能加空格或者注释，否则都会报错
-#define swap(a,b){\
+#define swap(a,b) ({\
     a ^= b;\
     b ^= a;\
     a ^= b;\
-}
+})
 // 冒泡法排序，把小的放在后面
 void bubble_sort(int * num,int n){
     for(int i = 1;i < n; i++){

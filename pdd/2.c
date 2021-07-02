@@ -1,3 +1,12 @@
+/* @date: 2021-05-29 19:20:32
+    宋迪PDD实习生笔试第二题，打扑克出牌次数最少。
+@功能:
+    
+@目的:
+
+*/
+
+
 #include <stdio.h>
 void CalNum(char a,char * b){
     switch (a){
