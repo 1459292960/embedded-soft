@@ -26,6 +26,8 @@ int main(void){
     int res = n - sum; // 第h层的节点
     int ans = res;
     int res_num = 0;
+    // i代表层数，从h-1层一直遍历到第一层
+    // 例如，第三层影响第二层，所以第一层只与第二层有关
     for(int i = h-1;i > 0;i--){
         res = pow(k,i-1)-(res+k-1)/k;
         ans += res;
