@@ -1,5 +1,6 @@
 #include <stdio.h>
 void bubble_sort(int * a,int len){
+    printf("%ld\n",sizeof(a)/sizeof(a[0]));
     int temp;
     for(int i = 1; i < len; i++){
         for(int j = 0; j < len-i; j++){
