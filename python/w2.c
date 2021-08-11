@@ -103,7 +103,7 @@ int main(void){
     char src[10000] = {0} ;
     char temp_src[100] = {0};
     for(int i = 0; i < len;i++){
-
+        // 三个参数，第一个参数存放转换之后的字符串，第二个参数指定第三个参数的类型，第三个参数为要转换的整形数据
         sprintf(temp_src,"%d",num[i]); // 将数字转换为字符串
         strcat(src,temp_src);
     }
